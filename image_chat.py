@@ -31,7 +31,10 @@ def generate_chat(prompt):
 # Load the image
 image_path = "sample_images/sample_1.jpg"
 
+# Calling CLIP for textural info
 type,emotion,character,description = get_descriptions(image_path)
+
+# Analysing basic info such as colors in the image
 color,color_text = extract_colors(image_path)
 
 
