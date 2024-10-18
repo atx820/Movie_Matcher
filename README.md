@@ -1,2 +1,2 @@
 # Movie_Matcher
-Matching short movies, CIS5810
+Matching short movie scenes. Developed as part of CIS-5810.
