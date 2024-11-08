@@ -1,3 +1,8 @@
 __pycache__/
 .DS_Store
 keys.py
+/240P
+/extracted_frames
+/output
+video.avi
+/IMDb

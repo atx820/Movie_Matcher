@@ -29,7 +29,7 @@ def generate_chat(prompt):
 
 
 # Load the image
-image_path = "sample_images/sample_1.jpg"
+image_path = "extracted_frames/tt0914798/shot_0081_img_1.jpg"
 
 # Calling CLIP for textural info
 type,emotion,character,description = get_descriptions(image_path)
