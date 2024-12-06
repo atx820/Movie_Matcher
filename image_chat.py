@@ -45,4 +45,4 @@ Based on the following description below, can you guess which movie this is or s
 
 response = generate_chat(test_prompt)
 
-print(response)
+#print(response)

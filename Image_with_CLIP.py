@@ -99,7 +99,7 @@ def get_descriptions(image_path):
     best_match_character = get_best_clip_match(image_path, characters)
     description = f"This is a {best_match_type}, There is/are {best_match_character}, The mood description of it is {best_match_emotion}"
     
-    print (description)
+    #print (description)
 
     return (best_match_type, best_match_emotion, best_match_character, description)
 
@@ -168,6 +168,6 @@ def get_descriptions_batch(folder_path):
         f"The mood description of it is {most_common_emotion}."
     )
 
-    print(description)
+    #print(description)
 
     return most_common_type, most_common_emotion, most_common_character, description

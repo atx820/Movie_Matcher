@@ -12,4 +12,4 @@ for filename in sorted(os.listdir(directory)):
         if (os.path.isdir(modified_f)==False):
             tar.extractall('extracted_frames/')
         elif (len(tar.getmembers()) != len(os.listdir(modified_f))-1):
-          tar.extractall('extracted_frames/')
+          tar.extractall('extracted_frames/')   

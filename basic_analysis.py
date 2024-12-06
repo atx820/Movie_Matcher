@@ -87,3 +87,12 @@ def extract_colors_batch(folder_path, common_colors=5, image_limit=3000, bin_siz
     #print(color_text)
 
     return most_common_colors,color_text
+
+def brightness_contrast(image):
+    if image is None:
+        print("Error: Unable to load image.")
+    else:
+        image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        brightness = np.mean(image_rgb)
+        contrast = np.std(image_rgb)
+        return brightness, contrast
