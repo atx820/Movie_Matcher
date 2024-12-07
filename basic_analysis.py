@@ -22,15 +22,15 @@ def extract_colors(image_path, n_colors=5):
     centers = np.uint8(kmeans.cluster_centers_)
     labels = kmeans.labels_
     
-    """
+    
     # Display the colors
     plt.figure()
     plt.imshow([centers])
     plt.axis("off")
     plt.show()
-    """    
+
     color_text = f"Dominant colors are:\n {centers}"
-    #print(color_text)
+    print(color_text)
 
     return centers,color_text
 
@@ -95,4 +95,5 @@ def brightness_contrast(image):
         image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         brightness = np.mean(image_rgb)
         contrast = np.std(image_rgb)
+
         return brightness, contrast

@@ -27,11 +27,12 @@ def create_dataset(frames_folder, output_csv, labels=None):
     with open(output_csv, 'a', buffering=1) as csvfile:
         csvwriter = csv.writer(csvfile)
 
-        for movie in movies:
+        for j in range(len(movies)):
+            movie = movies[j]
             frame_files = [os.path.join(movie, f) for f in os.listdir(movie) if f.endswith("_img_1.jpg")]
             #randomly pick 256 frames from frame_files
             frame_files = np.random.choice(frame_files, size=256, replace=False)
-
+            print(f"Processed movie {movie}, this is the {j+1} movie")
             for i, frame_file in enumerate(frame_files):
                 #Extract image embeddings and other features
                 image = cv2.imread(frame_file)
@@ -45,7 +46,6 @@ def create_dataset(frames_folder, output_csv, labels=None):
                 color,color_text = extract_colors(frame_file)
                 csvwriter.writerow([os.path.join(os.path.basename(movie), os.path.basename(frame_file)), image_embedding, brightness, contrast, scene_type, emotion, characters, description, color])
                 #df.loc[len(df)] = [image_embedding, brightness, contrast, scene_type, emotion, characters, description, color]
-                print(f"Processed {i+1} frame in movie {movie}")
     return
     # Write to CSV
     # df.to_csv('output.csv', index=False)
