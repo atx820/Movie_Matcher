@@ -8,5 +8,10 @@ video.avi
 /IMDb
 features - Copy.csv
 features.csv
+<<<<<<< HEAD
 features_2.csv
 /Processed_frames
+=======
+features_3.csv
+test.py
+>>>>>>> 148913d5b060ad63e00e557dfb713de522e8a4e6
