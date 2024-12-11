@@ -125,8 +125,10 @@ def generate_chat_img(client,image_path,prompt):
     return response
 
 # Load the image
-image_path = "extracted_frames/tt0087921/shot_0067_img_2.jpg"
+image_path = "Processed_frames/tt0049730/shot_0083_img_2.jpg"
 image = cv2.imread(image_path)
+file_name = os.path.basename(image_path)
+name_without_ext, ext = os.path.splitext(file_name)
 
 edit_image_path = "sample_images/test_edit.png"
 edit_image = cv2.imread(image_path)
@@ -155,7 +157,9 @@ prompt_image = f"""{description}, {response_img}"""
 
 #modify_image = modify_image(client, edit_image_path, response_img, "test_img_edit.png")
 
-#generate_image(client, prompt_image, "test_generate_6.png")
+
+generated_image_name = f"processed_{name_without_ext}{ext}"  
+generate_image(client, prompt_image, generated_image_name)
 
 test_prompt = f"""
 Based on the following description below, can you guess which movie this is or suggest some movies that might match its aesthetic feelings?\n
